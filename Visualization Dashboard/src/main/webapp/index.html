@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .chart {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Data Visualization Dashboard</h1>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label class="mr-sm-2" for="endYearFilter">End Year</label>
+                <select class="custom-select mr-sm-2" id="endYearFilter">
+                    <!-- Options will be dynamically populated -->
+                </select>
+            </div>
+            <div class="col-auto">
+                <label class="mr-sm-2" for="topicsFilter">Topics</label>
+                <select class="custom-select mr-sm-2" id="topicsFilter">
+                    <!-- Options will be dynamically populated -->
+                </select>
+            </div>
+            <!-- Add other filters similarly -->
+        </div>
+        <div id="chart" class="chart"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    // Populate filters
+                    const endYearFilter = document.getElementById('endYearFilter');
+                    const topicsFilter = document.getElementById('topicsFilter');
+                    // Populate other filters
+
+                    const uniqueEndYears = [...new Set(data.map(item => item.endYear))];
+                    uniqueEndYears.forEach(year => {
+                        const option = document.createElement('option');
+                        option.value = year;
+                        option.text = year;
+                        endYearFilter.appendChild(option);
+                    });
+
+                    const uniqueTopics = [...new Set(data.map(item => item.topics))];
+                    uniqueTopics.forEach(topic => {
+                        const option = document.createElement('option');
+                        option.value = topic;
+                        option.text = topic;
+                        topicsFilter.appendChild(option);
+                    });
+
+                    // Render chart with D3.js
+                    renderChart(data);
+
+                    endYearFilter.addEventListener('change', function() {
+                        const filteredData = data.filter(item => item.endYear == this.value);
+                        renderChart(filteredData);
+                    });
+
+                    topicsFilter.addEventListener('change', function() {
+                        const filteredData = data.filter(item => item.topics == this.value);
+                        renderChart(filteredData);
+                    });
+                });
+
+            function renderChart(data) {
+                document.getElementById('chart').innerHTML = '';
+                const svg = d3.select("#chart").append("svg")
+                    .attr("width", 800)
+                    .attr("height", 600);
+
+                // Add your D3 chart rendering logic here
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<style>
+body {
+    background-image: url("home.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    font-size: 15px;
+    width: 320px;
+    background: linear-gradient(to right, #FC0069, #9B00FC);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00FCE3;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+form.active {
+    display: block;
+}
+
+form {
+    margin-top: 20px;
+    display: none;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.forgotPassword p a{
+    color: white;
+    text-decoration: none;
+}
+.forgotPassword p a:active{
+    color: #004DFF;    
+    transition: background-color 0.8s ease;
+}
+
+input[type="submit"] {
+    background-color: #00FCE3;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.newAccount p a:active{
+    color: #004DFF;    
+    transition: background-color 0.8s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    transition: background-color 0.8s ease;
+    color: black;
+}
+
+.newAccount a {
+    text-decoration: none;
+    color: #fff;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <button onclick="showLoginForm('admin')">Admin Login</button>
+    <button onclick="showLoginForm('user')">User Login</button>
+
+    <form id="adminForm" action="admin" method="post">
+        <input type="text" name="name" placeholder="Enter Admin Name">
+        <input type="password" name="pass" placeholder="Enter Password">
+        <input type="submit" value="Login">
+    </form>
+
+    <form id="userForm" class="active" action="user" method="post">
+        <div class="user-box">
+            <input type="text" name="uName" placeholder="Enter User Name">
+        </div>
+        <div class="user-box">
+            <input type="password" name="pWord" placeholder="Enter Password">
+        </div>
+        <div class="forgotPassword">
+					<p>
+						<a href="forgot.html"> Forgot Password </a>
+					</p>
+				</div>
+        <div class="submitBtnDiv">
+            <input type="submit" value="Login" class="submit">
+        </div>
+        <div class="newAccount">
+            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+        </div>
+    </form>
+</div>
+
+<script>
+function showLoginForm(type) {
+    var adminForm = document.getElementById('adminForm');
+    var userForm = document.getElementById('userForm');
+
+    if (type === 'admin') {
+        adminForm.classList.add('active');
+        userForm.classList.remove('active');
+    } else {
+        adminForm.classList.remove('active');
+        userForm.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

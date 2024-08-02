@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pizza Order</title>
+</head>
+<body>
+
+<div class="container">
+<form action="order" method="post">
+<h2>Order your Pizza Here</h2>
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Enter Your Name"><br><br>
+
+<label>Select the Crust:</label>
+<select name="crust">
+<option value="Deep Crust">Deep Crust</option>
+<option value="Thin Crust">Thin Crust</option>
+<option value="Stuffed Crust">Stuffed Crust</option>
+</select><br>
+
+<h2>Toppings:</h2>
+<label for="peas">Peas</label>
+<input type="checkbox" id="peas" name="top"><br>
+<label for="paneer">Paneer</label>
+<input type="checkbox" id="paneer" name="top"><br>
+<label for="redpeppers">RedPappers</label>
+<input type="checkbox" id="redpeppers" name="top"><br>
+<label for="pineapple">PineApple</label>
+<input type="checkbox" id="pineapple" name="top"><br>
+<label for="onion">Onion</label>
+<input type="checkbox" id="onion" name="top"><br>
+<label for="tomato">Tomato</label>
+<input type="checkbox" id="tomato" name="top"><br>
+
+<h2>Select 1 FREE Appetizer</h2>
+<label><input type="radio" name="appetizer" value="Garlic Bread">Garlic Bread</label><br>
+<label><input type="radio" name="appetizer" value="Cheese Garlic Bread">Cheese Garlic Bread</label><br>
+<label><input type="radio" name="appetizer" value="Veg Soup">Veg Soup</label><br>
+<label><input type="radio" name="appetizer" value="Veg Sandwich">Veg Sandwich</label><br><br>
+
+<label>Address</label><br>
+<textarea rows="3" cols="50" name="address"></textarea><br>
+
+ <h2>Credit Card:</h2>
+ <label><input type="radio" name="credit_card" value="Visa">Visa</label>
+ <label><input type="radio" name="credit_card" value="Master Card">Master Card</label>
+ <label><input type="radio" name="credit_card" value="American Express">American Express</label><br><br>
+        
+Credit Card Number : <input type="password" name="cno">
+Repeat Credit Card Number : <input type="password" name="repeat_cno"><br><br>
+
+<input type="submit" value="Order Pizza">
+</form>
+</div>
+
+</body>
+</html>

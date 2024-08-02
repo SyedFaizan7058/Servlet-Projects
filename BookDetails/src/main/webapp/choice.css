@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image: url("library2.jpg");
+	background-size: 100% 100vh;
+	background-repeat: no-repeat;
+}
+
+h1{
+	color: white;
+	text-align: center;
+	margin: 80px;
+	font-size: 50px;
+}
+
+#choice {
+	width: 290px;
+	margin: 50px auto;
+}
+
+input[type="submit"] {
+	background-color: #007BFF;
+	color: #fff;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	text-align: center;
+	width: 300px;
+	height:70px;
+	font-size: 27px;
+}
+
+input[type="submit"]:hover {
+	background-color:#B6FF00;
+	color: black;
+}

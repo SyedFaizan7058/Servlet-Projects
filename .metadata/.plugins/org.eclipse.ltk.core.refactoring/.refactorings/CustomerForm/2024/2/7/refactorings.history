@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CustomerForm/src/main/webapp/WEB-INF/NewFile.xml&apos; to &apos;web.xml&apos;" description="Rename resource &apos;NewFile.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/NewFile.xml" name="web.xml" stamp="1707971890339" updateReferences="true"/>
+</session>

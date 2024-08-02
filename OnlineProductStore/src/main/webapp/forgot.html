@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Forgot PassWord</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(90deg, #0a0a0a, #3a4454);
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+.container {
+	width: 300px;
+	margin: 240px auto;
+	padding: 10px;
+	border-radius: 5px;
+	background: linear-gradient(45deg, #0a0a0a, #3a4454);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border: 2px solid white;
+}
+
+.container form {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="email"] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+	background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<form action="forgot" method="post">
+			<h1>Verify Email</h1>
+			<input type="email" name="mid" placeholder="Enter MailId"><br>
+			<br> <input type="submit" value="Next">
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>
